@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mega Mart E-commerce Website</title>
     <!-- style css -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <!-- font awesome cdn -->
     <link
       rel="stylesheet"
@@ -819,6 +819,23 @@
         }
       }
       displayDetails(pId,pCategory);
+
+      let cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
+      let wishProducts = JSON.parse(localStorage.getItem('wishProducts')) || [];
+
+      function passDataToCart(id,category){
+        const cProduct = {
+          productId: id,
+          productCategory: category,
+        };
+        cartProducts.push(cProduct);
+
+        localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+
+        alert("Product added to cart!");
+
+        console.log(cartProducts);
+      }
 
       const activities_box = document.querySelectorAll('.product-detail-btn button');
       const activities_container = document.querySelectorAll('.product-detail');
