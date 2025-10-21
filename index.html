@@ -722,6 +722,20 @@
       };
       getData(products);
 
+      // data load next page
+
+      const product_cards = document.querySelectorAll('.card');
+
+      product_cards.forEach((card) => {
+        card.addEventListener('click', function() {
+          //card id
+          const product_id = this.getAttribute("data-id");
+          //card category
+          const product_category = this.getAttribute("data-category");        
+          window.location.href = `./productDetails.html?productId=${product_id}&productCategory=${product_category}`;
+        });
+      });
+
     </script>
   </body>
 </html>
