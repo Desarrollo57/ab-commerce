@@ -225,6 +225,7 @@
         <div class="sc-top">
             <h2>Shopping Cart</h2>
         </div>
+
         <div class="cart-wrapper">
             <div class="cart-main">
                 <table style="border-color: transparent;">
@@ -233,17 +234,19 @@
                             <th class="product-name">Products</th>
                             <th class="product-price">Price</th>
                             <th class="product-quantity">Quantity</th>
+                            <th class="product-subtotal">Subtotal</th>
                             <th class="product-remove"></th>
                         </tr>
                     </thead>
-                    <tbody class="carItem">
-
+                    <tbody id="cartItem">
                     </tbody>
                 </table>
+                
                 <div class="cart-option-btn">
                     <button id="emptyCart">Empty cart</button>
                 </div>
             </div>
+
             <div class="cart-total">
                 <div class="ct-top">
                     <h2>Cart totals</h2>
@@ -253,7 +256,7 @@
                 </div>
                 <div class="ct-tol border-remove">
                     <h3>Total</h3>
-                    <h3 id="carTotal">$0</h3>
+                    <h3 id="cartTotal">$0</h3>
                 </div>
                 <a href="#" style="width: 100%;">
                     <button id="btn-checkout">Proceed to checkout</button>
@@ -386,7 +389,8 @@
                 const cCategory = item.productCategory;
 
                 // find the product based on id and category
-                const cProductCategory = products.find(p => p.category == cCategory)                
+                const cProductCategory = products.find(p => p.category == cCategory);
+                console.log(cProductCategory);
 
                 const cProduct = cProductCategory.products.find(p => p.productId == cId);
                 if(cProduct){
@@ -406,7 +410,7 @@
                     const cDivCartInfo = document.createElement('div');
                     cDivCartInfo.classList.add('cart-info');
                     const cH2 = document.createElement('h2');
-                    cH2.textContent = product.name;
+                    cH2.textContent = cProduct.name;
                     cDivCartInfo.appendChild(cH2);
 
                     cDivCartProduct.appendChild(cDivCartImg);
@@ -439,14 +443,14 @@
 
                     const cTd4 = document.createElement('td');
                     cTd4.classList.add('subtotal');
-                    cTd4.textContent = '$0';
+                    cTd4.textContent = `$0`;
 
                     const cTd5 = document.createElement('td');
                     const cRemoveIcon = document.createElement('i');
                     cRemoveIcon.classList.add('ri-close-large-fill');
 
                     cRemoveIcon.addEventListener('click',function(){
-                      removeItemFromCart(this);
+                      removeCardFromCart(this);
                       location.reload();
                     });
 
@@ -462,17 +466,75 @@
                 }
                 else{
                   console.log('product not found for id',pId)
-                }
-                
+                }                
             })
         }
         
         function removeCardFromCart(index){
           cartProducts.splice(index, 1);
           localStorage.setItem(`cartProducts`, JSON.stringify(cartProducts));
+          createCart();
         }
-        
         createCart();
+
+        document.getElementById('emptyCart').addEventListener('click',function(){
+          localStorage.removeItem('cartProducts');
+          location.reload()
+        })
+
+        let addBtn = document.querySelectorAll('.add');
+        let minusBtn = document.querySelectorAll('.minus');
+        let values = document.querySelectorAll('.value');
+        let prices = document.querySelectorAll('.price');
+        let cardTotal = document.querySelectorAll('.carTotal');
+        let subTotal = document.querySelectorAll('.subtotal');
+
+        //let totalCard = document.getElementById('carTotal');
+
+        let counts = Array(values.length).fill(1);
+
+        function updateCartTotal(){
+          let total = 0;
+          subTotal.forEach(subtotal => {
+            total += parseFloat(subtotal.textContent.replace('$',''));
+          });
+          cardTotal.textContent = '$' +total.toFixed(2);
+        }
+        function updateSubtotal(index){
+          const cPrice = parseFloat(prices[index].textContent.replace('$',''));
+          const cQuantity = counts[index];
+          const cSubTotal = cPrice * cQuantity;
+
+          subTotal[index].textContent = '$' + cSubTotal.toFixed(2);
+          updateCartTotal();
+        }
+
+        addBtn.forEach((btn,index) =>{
+          btn.addEventListener('click',function(){
+            counts[index]++;
+            values[index].textContent = counts[index];
+            updateSubtotal(index);
+          });          
+        });
+
+        minusBtn.forEach((minusBtn,index) =>{
+          minusBtn.addEventListener('click',function(){
+            if(counts[index] >1){
+              counts[index]--;
+              values[index].textContent = counts[index];              
+              updateSubtotal(index);
+            }
+          });
+        });
+
+        subTotal.forEach((_, index) =>{
+          updateSubtotal(index);          
+        })
+
+        document.getElementById('btn-checkout').addEventListener('click', function(){
+          let total = cardTotal.innerText;
+          window.location.href = `./checkout.html?total=${total}`;
+          });
     </script>
       
   </body>
