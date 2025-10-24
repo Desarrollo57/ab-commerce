@@ -90,7 +90,7 @@ const products = [
                 title:"Laptops",
                 name:"Laptop 14 : 8-core CPU, M2 2022, 8GB | 256GB, New",
                 image:"Image/Laptop-2.jpg",
-                price:"$1,399.00",
+                price:"$1.199.00",
                 lessprice:"$1584.00",
                 off:"14%",
                 specification:{
@@ -104,7 +104,7 @@ const products = [
                 title:"Laptops",
                 name:"Laptop 14 : 8-core CPU, M2 2022, 8GB | 256GB, New",
                 image:"Image/Laptop-3.jpg",
-                price:"$1,399.00",
+                price:"$1.399.00",
                 lessprice:"$1584.00",
                 off:"14%",
                 specification:{
@@ -118,7 +118,7 @@ const products = [
                 title:"Laptops",
                 name:"Laptop 14 : 8-core CPU, M2 2022, 8GB | 256GB, New",
                 image:"Image/Laptop-5.jpg",
-                price:"$1,399.00",
+                price:"$1.399.00",
                 lessprice:"$1584.00",
                 off:"14%",
                 specification:{
@@ -132,7 +132,7 @@ const products = [
                 title:"Laptops",
                 name:"Laptop 14 : 8-core CPU, M2 2022, 8GB | 256GB, New",
                 image:"Image/Laptop-6.jpg",
-                price:"$1,399.00",
+                price:"$1.399.00",
                 lessprice:"$1584.00",
                 off:"14%",
                 specification:{
@@ -146,7 +146,7 @@ const products = [
                 title:"Laptops",
                 name:"Laptop 14 : 8-core CPU, M2 2022, 8GB | 256GB, New",
                 image:"Image/Laptop-7.jpg",
-                price:"$1,399.00",
+                price:"$1.399.00",
                 lessprice:"$1584.00",
                 off:"14%",
                 specification:{
@@ -160,7 +160,7 @@ const products = [
                 title:"Laptops",
                 name:"Laptop 14 : 8-core CPU, M2 2022, 8GB | 256GB, New",
                 image:"Image/Laptop-8.jpg",
-                price:"$1,399.00",
+                price:"$1.399.00",
                 lessprice:"$1584.00",
                 off:"14%",
                 specification:{

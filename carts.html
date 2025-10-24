@@ -217,7 +217,7 @@
     <div class="page-section">
       <h2>
         <a href="./index.html">Home /</a>
-        <p id="product-name-title">Shopping Cart/p>
+        <p id="product-name-title">Shopping Cart</p>
       </h2>
     </div>
 
@@ -485,17 +485,16 @@
         let addBtn = document.querySelectorAll('.add');
         let minusBtn = document.querySelectorAll('.minus');
         let values = document.querySelectorAll('.value');
-        let prices = document.querySelectorAll('.price');
-        let cardTotal = document.querySelectorAll('.carTotal');
-        let subTotal = document.querySelectorAll('.subtotal');
+        let prices = document.querySelectorAll('.price');        
+        let subTotals = document.querySelectorAll('.subtotal');
 
-        //let totalCard = document.getElementById('carTotal');
+        let cardTotal = document.getElementById('cartTotal');
 
         let counts = Array(values.length).fill(1);
 
         function updateCartTotal(){
           let total = 0;
-          subTotal.forEach(subtotal => {
+          subTotals.forEach(subtotal => {
             total += parseFloat(subtotal.textContent.replace('$',''));
           });
           cardTotal.textContent = '$' +total.toFixed(2);
@@ -505,7 +504,7 @@
           const cQuantity = counts[index];
           const cSubTotal = cPrice * cQuantity;
 
-          subTotal[index].textContent = '$' + cSubTotal.toFixed(2);
+          subTotals[index].textContent = '$' + cSubTotal.toFixed(2);
           updateCartTotal();
         }
 
@@ -527,7 +526,7 @@
           });
         });
 
-        subTotal.forEach((_, index) =>{
+        subTotals.forEach((_, index) =>{
           updateSubtotal(index);          
         })
 

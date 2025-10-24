@@ -1925,6 +1925,200 @@ footer{
     color: var(--primary-color);
     cursor: pointer;
 }
-
 /* carts page end */
+/* ----------------------------------------------------- */
+/* checkout page start */
+.checkout-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 12%;
+    flex-direction: column;
+    gap: 20px;
+}
+.higlight{
+    width: 100%;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 20px 10px;
+    background-color: #efebeb;
+    margin-top: 50px;
+    border-left: 1px solid #8c6b3c;
+}
+.checkout-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+.checkout-left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+.checkout-left h2,
+.checkout-right h2{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+.checkout-left form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.checkout-left form input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8c6b3c24;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.checkout-left form .name-lab{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100% !important;
+    gap: 10px;
+}
+.name-lab form .name-lab input{
+    width: 100% !important;
+    border: 1px solid #8c6b3c24;
+    border-radius: 5px;
+}
+.checkout-left form .name-lab label{
+    width: 100% !important;
+}
+.checkout-left form label{
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.checkout-left form select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8c6b3c24;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.checkout-left form textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8c6b3c24;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.checkout-right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+}
+.payment-container{
+    margin-top: 20px;
+    width: 70%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+.input-group{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+.input-group i{
+    margin-right: 10px;
+    color: #333;
+}
+.input-group input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 1rem;
+}
+.card-details{
+    display: flex;
+    gap: 10px;
+}
+.pay-btn{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    color: var(--back);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition-fast);
+    background-color: #ccc;
+}
+.pay-btn:hover{
+    background-color: #8c6b3c;
+    color: var(--white);
+}
+.checkout-right p{
+    padding: 10px 0;
+    font-size: 1.1rem;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.checkbox input{
+    width: 18px;
+    height: 18px;
+}
+.chek-btn{
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    color: var(--back);
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    transition: var(--transition-fast);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.chek-btn button{
+    background-color: transparent !important;
+    border: none;
+}
+.checkout-right .chek-btn button:hover{
+    background-color: var(--back);
+}
+@media screen and (max-width:1100px){
+    .checkout-container{
+        flex-direction: column;
+    }
+    .checkout-left,
+    .checkout-right{
+        width: 100%;
+    }
+    .payment-container{
+        width: 100%;
+    }
+    .cart-total{
+        width: 100% !important;
+    }
+}
+
+/* checkout page end */
 /* 4:10:30 */
