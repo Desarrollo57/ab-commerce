@@ -608,7 +608,7 @@
           </div>
           <div class="btncon">
             <a href="./carts.html" class="addtocartbtn" onClick="passDataToCart('${id}','${category}')">Cart</a>
-            <a href="./carts.html" class="addtocartbtn addtowishbtn" onClick="passDataToWish('${id}','${category}')">Add To Wishlist</a>
+            <a href="./wishlist.html" class="addtocartbtn addtowishbtn" onClick="passDataToWish('${id}','${category}')">Add To Wishlist</a>
           </div>
           <div class="info">
             <p>
@@ -835,6 +835,20 @@
         alert("Product added to cart!");
 
         console.log(cartProducts);
+      }
+
+      function passDataToWish(id,category){
+        const cProduct = {
+          productId: id,
+          productCategory: category,
+        };
+        wishProducts.push(cProduct);
+
+        localStorage.setItem('wishProducts', JSON.stringify(wishProducts));
+
+        alert("Product added to Wish!");
+
+        console.log(wishProducts);
       }
 
       const activities_box = document.querySelectorAll('.product-detail-btn button');

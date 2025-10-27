@@ -384,9 +384,9 @@
         const cContainer = document.getElementById('cartItem');
 
         function createCart(){
-            cartProducts.forEach(item => {
-                const cId = item.productId;
-                const cCategory = item.productCategory;
+            cartProducts.forEach(product => {
+                const cId = product.productId;
+                const cCategory = product.productCategory;
 
                 // find the product based on id and category
                 const cProductCategory = products.find(p => p.category == cCategory);
