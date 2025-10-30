@@ -260,6 +260,130 @@
 
         </div>
     </section>
+
+    <section class="ab-teams">
+      <div class="ab-team-top">
+        <h2>Our Teams</h2>
+      </div>
+
+      <div class="ab-team-wrapper">
+        <!-- team col 1 -->
+          <div class="ab-team-col">
+            <div class="ab-team-img">
+              <img src="./Image/team-1.jpg" alt="">
+            </div>
+            <div class="ab-team-info">
+              <h2>John Hossain</h2>
+              <p>CEO & Founder</p>
+              <div class="ab-team-social-icon">
+                <i class="ri-twitter-x-line"></i>
+                <i class="ri-instagram-line"></i>
+                <i class="ri-pinterest-line"></i>
+                <i class="ri-youtube-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- team col 2 -->
+          <div class="ab-team-col">
+            <div class="ab-team-img">
+              <img src="./Image/team-2.jpg" alt="">
+            </div>
+            <div class="ab-team-info">
+              <h2>Jane Cooper</h2>
+              <p>Market Development</p>
+              <div class="ab-team-social-icon">
+                <i class="ri-twitter-x-line"></i>
+                <i class="ri-instagram-line"></i>
+                <i class="ri-pinterest-line"></i>
+                <i class="ri-youtube-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- team col 3 -->
+          <div class="ab-team-col">
+            <div class="ab-team-img">
+              <img src="./Image/team-3.jpg" alt="">
+            </div>
+            <div class="ab-team-info">
+              <h2>Kristin Watson</h2>
+              <p>Head Engineer</p>
+              <div class="ab-team-social-icon">
+                <i class="ri-twitter-x-line"></i>
+                <i class="ri-instagram-line"></i>
+                <i class="ri-pinterest-line"></i>
+                <i class="ri-youtube-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- team col 4 -->
+          <div class="ab-team-col">
+            <div class="ab-team-img">
+              <img src="./Image/team-4.jpg" alt="">
+            </div>
+            <div class="ab-team-info">
+              <h2>Isabella</h2>
+              <p>Marketing</p>
+              <div class="ab-team-social-icon">
+                <i class="ri-twitter-x-line"></i>
+                <i class="ri-instagram-line"></i>
+                <i class="ri-pinterest-line"></i>
+                <i class="ri-youtube-line"></i>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </section>
+
+    <section class="ab-performance">
+      <div class="ab-performance-content">
+        <h2>Our Performance</h2>
+        <h1>We Believe In Quality Products</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis aut porro voluptates explicabo, quia beatae fugiat illo perferendis similique ex?</p>        
+      </div>
+      <div class="ab-performance-img">
+          <img src="./Image/about-2.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="/* about slide end */">
+      <div class="ab-swiper">
+        <div class="swiper abSlider">
+          <div class="swiper-wrapper">
+            <!-- slide 1 -->
+            <div class="swiper-slide">
+              <div class="ab-slide">
+                <div class="ab-slide-img">
+                  <img src="./Image/avatar-1.jpg" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aliquam eum officia amet non sequi reprehenderit cupiditate odio deserunt in officiis, ut saepe consectetur dignissimos.</p>
+              </div>
+            </div>
+            <!-- slide 2 -->
+            <div class="swiper-slide">
+              <div class="ab-slide">
+                <div class="ab-slide-img">
+                  <img src="./Image/avatar-2.jpg" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aliquam eum officia amet non sequi reprehenderit cupiditate odio deserunt in officiis, ut saepe consectetur dignissimos.</p>
+              </div>
+            </div>
+            <!-- slide 3 -->
+            <div class="swiper-slide">
+              <div class="ab-slide">
+                <div class="ab-slide-img">
+                  <img src="./Image/avatar-3.jpg" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aliquam eum officia amet non sequi reprehenderit cupiditate odio deserunt in officiis, ut saepe consectetur dignissimos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
         <!-- footer start -->
          <footer>
@@ -366,6 +490,14 @@
     <!-- swiper slide cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     <!-- products data -->
-       <script src="./data.js"></script>       
+       <script src="./data.js"></script>  
+       <script>
+        var swiper = new Swiper('.abSlider',{
+          slidesPerView: 1,
+          spaceBetween: 0,
+          loop:true,
+          autopaly: true
+        })
+       </script>     
 </body>
 </html>
